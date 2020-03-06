@@ -15,7 +15,6 @@ namespace StudentExercises
             FirstName = firstName;
             LastName = lastName;
             SlackHandle = slackHandle;
-
         }
 
     }

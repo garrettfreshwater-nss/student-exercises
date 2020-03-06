@@ -3,24 +3,21 @@
 // The collection of students in the cohort.
 // The collection of instructors in the cohort.
 
+using System.Collections.Generic;
+
 namespace StudentExercises
 {
     public class Cohort
     {
-        //! Field
-        //* Fields don't have a get; set; and are typically private
-        // private int _milesDriven = 0;
-
-        //! Properties
-        //* Properties have a aget; set; and are typically public
         public string CohortName { get; set; }
-        public string Students { get; set; }
-        public string Instructors { get; set; }
-
-        public string Description
+        public List<Student> Students { get; set; } = new List<Student>();
+        public List<Instructor> Instructors { get; set; } = new List<Instructor>();
+        public Cohort(string cohortName, List<Student> students, List<Instructor> instructors)
         {
-            get
-            {
-                return $"Cohort's {InstructorCohort} instructor is {FirstName } {LastName} @{SlackHandle}, they specialize in {InstructorSpecialty}";
-            }
+            CohortName = cohortName;
+            Students = students;
+            Instructors = instructors;
         }
+
+    }
+}
